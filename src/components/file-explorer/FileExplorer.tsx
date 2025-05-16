@@ -1,7 +1,6 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Upload, FolderPlus, List, Grid } from "lucide-react";
+import { Upload, FolderPlus, List, Grid, Folder } from "lucide-react";
 import FileItem from "./FileItem";
 import { toast } from "sonner";
 
