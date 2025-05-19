@@ -34,17 +34,7 @@ const Files = () => {
                 <span>Settings</span>
               </Button>
             </nav>
-            
-            <div className="mt-auto">
-              <div className="mb-2">
-                <div className="flex justify-between mb-1">
-                  <span className="text-sm text-gray-500">Storage used</span>
-                  <span className="text-sm font-medium">2.4 GB / 15 GB</span>
-                </div>
-                <Progress value={16} className="h-2" />
-              </div>
-              <Button variant="outline" className="w-full">Upgrade Storage</Button>
-            </div>
+          
           </div>
         </aside>
         <main className="flex-1 flex flex-col">
