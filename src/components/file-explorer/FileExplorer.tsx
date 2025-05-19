@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Upload, FolderPlus, List, Grid, Folder } from "lucide-react";
 import FileItem from "./FileItem";
 import { toast } from "sonner";
+import { Link } from 'react-router-dom';
+
 
 // Mock data for files and folders
 const initialItems = [
@@ -83,12 +85,14 @@ const FileExplorer = () => {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 border-b">
         <div>
           <div className="flex items-center space-x-1 text-sm mb-2 sm:mb-0">
+            <Link to="/">
             <button 
               onClick={() => setCurrentPath([])}
               className="text-brand-purple hover:underline font-medium"
             >
               Home
             </button>
+            </Link>
             {currentPath.map((path, index) => (
               <div key={index} className="flex items-center">
                 <span className="mx-1 text-gray-400">/</span>
