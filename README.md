@@ -1,73 +1,32 @@
-# Welcome to your Lovable project
+# 📦 Dropify
 
-## Project info
+Dropify is a modern, secure, and easy-to-use **Dropbox clone** for storing and sharing files in the cloud. Built with a focus on simplicity, performance, and real-time interaction.
 
-**URL**: https://lovable.dev/projects/cd4f6b8e-fe79-4b7b-a02b-293db0c49f4a
+![Dropify Banner](favicon.ico) <!-- Replace with your actual banner if needed -->
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Features
 
-**Use Lovable**
+- 🔐 **User Authentication** (Sign up / Login)
+- ☁️ **Cloud Storage** for files (upload/download/delete)
+- 🗂️ Folder Management
+- 📤 Drag & Drop File Upload
+- 🔄 Real-time Sync
+- 📱 Responsive UI (mobile-friendly)
+- 🌈 Clean, modern design
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/cd4f6b8e-fe79-4b7b-a02b-293db0c49f4a) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠 Tech Stack
 
-**Use your preferred IDE**
+### Frontend:
+- **React.js** (with Vite)
+- **Tailwind CSS** for styling
+- **React Router** for navigation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Backend:
+- **Python Flask** / Node.js (your choice)
+- **MongoDB** / MySQL (for user & file metadata)
+- **Cloudinary / Firebase / AWS S3** (for file storage)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/cd4f6b8e-fe79-4b7b-a02b-293db0c49f4a) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
