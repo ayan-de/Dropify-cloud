@@ -91,6 +91,7 @@ const FileExplorer = () => {
               className="text-brand-purple hover:underline font-medium"
             >
               Home
+              
             </button>
             </Link>
             {currentPath.map((path, index) => (
