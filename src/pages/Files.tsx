@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import FileExplorer from "@/components/file-explorer/FileExplorer";
 import { ChevronDown, Cloud, Settings, User, Trash2 } from "lucide-react";
-import { Progress } from "@/components/ui/progress";
+// import { Progress } from "@/components/ui/progress";
 import { SidebarProvider } from "@/components/ui/sidebar";
 
 const Files = () => {

@@ -23,7 +23,7 @@ const CTASection = () => {
                   </Button>
                 </Link>
                 <Link to="/pricing">
-                  <Button variant="outline" className="text-white border-white hover:bg-brand-purple-dark">
+                  <Button variant="outline" className="text-brand-purple border-white ">
                     View Pricing
                   </Button>
                 </Link>
