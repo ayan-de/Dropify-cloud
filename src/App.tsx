@@ -9,6 +9,9 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Files from "./pages/Files";
 import NotFound from "./pages/NotFound";
+import Pricing from "./pages/Pricing";
+import HelpDesk from "./pages/HelpDesk";
+import Features from "./pages/Features";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +26,9 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/files" element={<Files />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/help-desk" element={<HelpDesk />} />
+          <Route path="/features" element={<Features />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

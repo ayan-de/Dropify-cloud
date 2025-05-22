@@ -1,50 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Upload, FolderPlus, List, Grid, Folder } from "lucide-react";
 import FileItem from "./FileItem";
 import { toast } from "sonner";
 import { Link } from 'react-router-dom';
+import { getFiles, uploadFile } from "@/lib/api";
 
-
-// Mock data for files and folders
-const initialItems = [
-  { id: '1', name: 'Documents', type: 'folder' as const },
-  { id: '2', name: 'Images', type: 'folder' as const },
-  { id: '3', name: 'Project Files', type: 'folder' as const },
-  { id: '4', name: 'Resume.pdf', type: 'file' as const, size: '2.4 MB', modified: 'Apr 12, 2025' },
-  { id: '5', name: 'Presentation.pptx', type: 'file' as const, size: '5.1 MB', modified: 'Apr 10, 2025' },
-  { id: '6', name: 'Budget.xlsx', type: 'file' as const, size: '1.8 MB', modified: 'Apr 5, 2025' },
-  { id: '7', name: 'Profile.jpg', type: 'file' as const, size: '3.2 MB', modified: 'Mar 28, 2025' }
-];
+type FileItemType = {
+  id: string;
+  name: string;
+  type: 'folder' | 'file';
+  size?: string;
+  modified?: string;
+};
 
 const FileExplorer = () => {
-  const [items, setItems] = useState(initialItems);
+  const [items, setItems] = useState<FileItemType[]>([]);
   const [currentPath, setCurrentPath] = useState<string[]>([]);
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('list');
   const [isUploading, setIsUploading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const files = await getFiles(currentPath);
+      setItems(files);
+    };
+
+    fetchData();
+  }, [currentPath]);
   
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       setIsUploading(true);
       
-      // Simulate file upload
-      setTimeout(() => {
-        const newFiles = Array.from(e.target.files || []).map((file, index) => ({
-          id: Date.now() + index.toString(),
-          name: file.name,
-          type: 'file' as const,
-          size: `${(file.size / (1024 * 1024)).toFixed(1)} MB`,
-          modified: new Date().toLocaleDateString('en-US', {
-            month: 'short',
-            day: 'numeric',
-            year: 'numeric'
-          })
-        }));
+      const newFiles = [];
+      for (const file of Array.from(e.target.files)) {
+        const uploadedFile = await uploadFile(file, currentPath);
+        newFiles.push(uploadedFile);
+      }
         
-        setItems([...items, ...newFiles]);
-        setIsUploading(false);
-        toast.success(`${newFiles.length} file(s) uploaded successfully`);
-      }, 1500);
+      setItems([...items, ...newFiles]);
+      setIsUploading(false);
+      toast.success(`${newFiles.length} file(s) uploaded successfully`);
     }
   };
   

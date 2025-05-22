@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
+import { signup } from "@/lib/api";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -16,7 +17,7 @@ const Signup = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!agreedToTerms) {
@@ -26,12 +27,19 @@ const Signup = () => {
     
     setIsLoading(true);
 
-    // Simulate signup process
-    setTimeout(() => {
+    try {
+      await signup(name, email, password);
       setIsLoading(false);
       toast.success("Account created successfully!");
       navigate("/files");
-    }, 1500);
+    } catch (error: unknown) {
+      setIsLoading(false);
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("An unexpected error occurred");
+      }
+    }
   };
 
   return (

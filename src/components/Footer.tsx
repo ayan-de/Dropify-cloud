@@ -36,6 +36,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/features" className="text-gray-500 hover:text-brand-purple">Features</Link></li>
               <li><Link to="/pricing" className="text-gray-500 hover:text-brand-purple">Pricing</Link></li>
+              <li><Link to="/helpdesk" className="text-gray-500 hover:text-brand-purple">Help Desk</Link></li>
               <li><Link to="/security" className="text-gray-500 hover:text-brand-purple">Security</Link></li>
             </ul>
           </div>
@@ -62,6 +63,14 @@ const Footer = () => {
             <Link to="/terms" className="text-gray-500 text-sm hover:text-brand-purple">Terms</Link>
             <Link to="/privacy" className="text-gray-500 text-sm hover:text-brand-purple">Privacy</Link>
             <Link to="/cookies" className="text-gray-500 text-sm hover:text-brand-purple">Cookies</Link>
+          </div>
+        </div>
+        <div className="border-t border-gray-200 mt-6 pt-3 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-500 text-sm">Other Pages</p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <Link to="/login" className="text-gray-500 text-sm hover:text-brand-purple">Login</Link>
+            <Link to="/signup" className="text-gray-500 text-sm hover:text-brand-purple">Signup</Link>
+            <Link to="/not-found" className="text-gray-500 text-sm hover:text-brand-purple">Not Found</Link>
           </div>
         </div>
       </div>
